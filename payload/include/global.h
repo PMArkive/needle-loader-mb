@@ -170,7 +170,7 @@ typedef struct unk_struct_3000E90{
     u8 unk_18[0x14];
     int unk_2C;
     int unk_30;
-    u8 unk_34[0x23];
+    u8 unk_34[4];
     u8 unk_57;
     u8 unk_58[0x8];
 } unk_struct_3000E90;

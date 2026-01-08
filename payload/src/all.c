@@ -1653,3 +1653,67 @@ int sub_2019550(char arg0) {
 
     return ret;
 }
+
+/*
+	thumb_func_start sub_2019580
+sub_2019580: @ 0x02019580
+	push {r4, lr}
+	adds r2, r0, #0
+	movs r3, #0
+	movs r4, #0x38
+	ldrsh r0, [r2, r4]
+	lsls r0, r0, #2
+	adds r0, r0, r1
+	ldr r1, [r0]
+
+int r1 = a1[r2->unk_38];
+
+	movs r4, #0x34
+	ldrsh r0, [r2, r4]
+	cmp r0, #0
+	bne _020195A8
+
+if (r2->unk_34 == 0 && ...
+
+	movs r4, #0x36
+	ldrsh r0, [r2, r4]
+	lsls r0, r0, #3
+	adds r0, r0, r1
+	ldr r0, [r0, #8]
+	cmp r0, #0
+	bne _020195A8
+
+... a1->unk_0[r2->unk_36][0] == 0)
+
+	movs r3, #1
+_020195A8:
+	adds r0, r3, #0
+	pop {r4}
+	pop {r1}
+	bx r1
+*/
+
+// start nonsense structure stuff will get to improve later
+typedef struct unk_sub_2019580_struct
+{
+	u8 padding_0[0x34];
+	s16 unk_34;
+	s16 unk_36;
+    s16 unk_38;
+} unk_sub_2019580_struct;
+
+typedef struct unk_sub_2019580_struct_2
+{
+	u32 unk_0[8][2]; // 8 is actually unk
+} unk_sub_2019580_struct_2;
+
+int sub_2019580(unk_sub_2019580_struct *r2, unk_sub_2019580_struct_2 *a1)
+{
+	int ret = 0;
+	int r1 = a1->unk_0[0][r2->unk_38];
+	if (r2->unk_38 == 0 && a1->unk_0[r2->unk_36][0] == 0)
+	{
+		ret = 1;
+	}
+	return ret;
+}

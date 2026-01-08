@@ -3,33 +3,33 @@
 	.text
 	.syntax unified
 
-	thumb_func_start sub_2019580
-sub_2019580: @ 0x02019580
-	push {r4, lr}
-	adds r2, r0, #0
-	movs r3, #0
-	movs r4, #0x38
-	ldrsh r0, [r2, r4]
-	lsls r0, r0, #2
-	adds r0, r0, r1
-	ldr r1, [r0]
-	movs r4, #0x34
-	ldrsh r0, [r2, r4]
-	cmp r0, #0
-	bne _020195A8
-	movs r4, #0x36
-	ldrsh r0, [r2, r4]
-	lsls r0, r0, #3
-	adds r0, r0, r1
-	ldr r0, [r0, #8]
-	cmp r0, #0
-	bne _020195A8
-	movs r3, #1
-_020195A8:
-	adds r0, r3, #0
-	pop {r4}
-	pop {r1}
-	bx r1
+@	thumb_func_start sub_2019580
+@sub_2019580: @ 0x02019580
+@	push {r4, lr}
+@	adds r2, r0, #0
+@	movs r3, #0
+@	movs r4, #0x38
+@	ldrsh r0, [r2, r4]
+@	lsls r0, r0, #2
+@	adds r0, r0, r1
+@	ldr r1, [r0]
+@	movs r4, #0x34
+@	ldrsh r0, [r2, r4]
+@	cmp r0, #0
+@	bne _020195A8
+@	movs r4, #0x36
+@	ldrsh r0, [r2, r4]
+@	lsls r0, r0, #3
+@	adds r0, r0, r1
+@	ldr r0, [r0, #8]
+@	cmp r0, #0
+@	bne _020195A8
+@	movs r3, #1
+@_020195A8:
+@	adds r0, r3, #0
+@	pop {r4}
+@	pop {r1}
+@	bx r1
 
 	thumb_func_start sub_20195B0
 sub_20195B0: @ 0x020195B0
